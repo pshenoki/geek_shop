@@ -1,4 +1,6 @@
 from django.shortcuts import render
+
+from basketapp.views import basket
 from mainapp.models import Product
 
 
@@ -8,6 +10,7 @@ def index(request):
     context = {
         'title': title,
         'products': products,
+        'basket': basket,
     }
     return render(request, 'geekshop/index.html', context=context)
 

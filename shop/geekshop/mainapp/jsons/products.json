@@ -1,0 +1,96 @@
+[
+  {
+
+      "category": "Chairs",
+      "name": "Red chair",
+      "image": "products_images/product-4.jpg",
+      "short_desc": "sdgdfgdf",
+      "description": "",
+      "price": "2300.00",
+      "quantity": 10
+
+
+  },
+  {
+
+      "category": "Office",
+      "name": "round lamp",
+      "image": "products_images/product-1.jpg",
+      "short_desc": "lamp lights",
+      "description": "",
+      "price": "4500.00",
+      "quantity": 23
+
+  },
+  {
+
+      "category": "Chairs",
+      "name": "Blue char",
+      "image": "products_images/product-2.jpg",
+      "short_desc": "sdfsgdfg",
+      "description": "",
+      "price": "2999.00",
+      "quantity": 10
+
+
+  },
+  {
+
+      "category": "Office",
+      "name": "Black water",
+      "image": "products_images/product-3.jpg",
+      "short_desc": "drink tea",
+      "description": "",
+      "price": "1000.00",
+      "quantity": 10
+
+
+  },
+  {
+
+      "category": "Chairs",
+      "name": "Blue chair",
+      "image": "products_images/product-4.jpg",
+      "short_desc": "uncomfortable",
+      "description": "",
+      "price": "2300.00",
+      "quantity": 10
+
+
+  },
+  {
+
+      "category": "Modern",
+      "name": "Lamp sphere mod",
+      "image": "products_images/product-1.jpg",
+      "short_desc": "sun light",
+      "description": "",
+      "price": "14500.00",
+      "quantity": 23
+
+  },
+  {
+
+      "category": "Modern",
+      "name": "LLLLLoo",
+      "image": "products_images/product-2.jpg",
+      "short_desc": "alahamore",
+      "description": "",
+      "price": "29699.00",
+      "quantity": 10
+
+
+  },
+  {
+
+      "category": "Classic",
+      "name": "yeaaa classic",
+      "image": "products_images/product-3.jpg",
+      "short_desc": "drink water",
+      "description": "",
+      "price": "12000.00",
+      "quantity": 10
+
+
+  }
+]

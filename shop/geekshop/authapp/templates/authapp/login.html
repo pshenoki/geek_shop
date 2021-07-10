@@ -7,14 +7,17 @@
             <div class="mx-auto col-3">
                 <form class="form-horizontal" action="{% url 'auth:login' %}" method="post" >
                     {% csrf_token %}
+                    {% if next %}
+                        <input type="hidden" name="next" value="{{ next }}">
+                    {% endif %}
                     {{ login_form.as_p }}
-                    <button type="submit" class="btn btn-primary">Enter</button>
+                    <button type="submit" class="btn btn-primary">Войти</button>
                 </form>
             </div>
         </div>
         <button class="btn btn-round form-control">
         <a href="{% url 'auth:register' %}" class="">
-            Registrate
+            зарегистрироваться
         </a>
     </button>
     </div>

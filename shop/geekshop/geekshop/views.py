@@ -1,30 +1,24 @@
 from django.shortcuts import render
 
-from basketapp.views import basket
+from basketapp.models import Basket
 from mainapp.models import Product
 
 
 def index(request):
-    title = "магазин"
-    products = Product.objects.all()
+    title = 'магазин'
+
+    products = Product.objects.all()[:3]
+    basket = []
+    if request.user.is_authenticated:
+        basket = Basket.objects.filter(user=request.user)
+
     context = {
         'title': title,
         'products': products,
-        'basket': basket,
+        'basket': basket
     }
     return render(request, 'geekshop/index.html', context=context)
 
 
 def contacts(request):
-    title = "Контакты"
-    contacts_list = [
-        {'town': 'Москва', 'phone': '8-999-777-77-77', 'email': 'moscow@yandex.ru', 'address': 'Проспект Мира 41'},
-        {'town': 'Казань', 'phone': '8-888-666-66-66', 'email': 'kazand@yandex.ru', 'address': 'Ленина 20'},
-        {'town': 'Питер', 'phone': '8-777-555-55-55', 'email': 'piter@yandex.ru', 'address': 'Петергоф  1'},
-    ]
-
-    context = {
-        'title': title,
-        'contacts_list': contacts_list
-    }
-    return render(request, 'geekshop/contact.html', context=context)
+    return render(request, 'geekshop/contact.html')

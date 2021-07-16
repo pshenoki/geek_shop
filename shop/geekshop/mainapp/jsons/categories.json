@@ -1,22 +1,25 @@
 [
   {
-    "name": "Chairs",
-    "description": ""
+      "name": "Стулья",
+      "description": "Это супер стулья"
   },
   {
-    "name": "House",
-    "description": ""
+      "name": "Дом",
+      "description": ""
   },
   {
-    "name": "Office",
-    "description": ""
+
+      "name": "Офис",
+      "description": ""
   },
   {
-    "name": "Modern",
-    "description": ""
+      "name": "Модерн",
+      "description": "",
+      "created": "2021-06-25T21:45:41.825",
+      "updated": "2021-06-25T21:45:41.825"
   },
   {
-    "name": "Classic",
-    "description": ""
+      "name": "Классика",
+      "description": ""
   }
 ]

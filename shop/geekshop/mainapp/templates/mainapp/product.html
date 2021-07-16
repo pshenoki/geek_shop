@@ -35,10 +35,10 @@
 
 				<div class="description">
 					<h3 class="big-bold">{{ product.name }}</h3>
-					<h3 class="red">very hot</h3>
-					<p class="price"> {{ product.price }} <span>rub</span></p>
+					<h3 class="red">горячее предложение</h3>
+					<p class="price"> {{ product.price }} <span>руб</span></p>
 					<a href="{% url 'basket:add' product.pk %}" class="red-button">
-						order <i class="fa fa-chevron-right" aria-hidden="true"></i>
+						заказать <i class="fa fa-chevron-right" aria-hidden="true"></i>
 					</a>
 					<div class="description-text">
 						{{ product.description }}

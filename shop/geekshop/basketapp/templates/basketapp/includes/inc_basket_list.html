@@ -2,10 +2,10 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Products</th>
-      <th scope="col">Quantity</th>
-      <th scope="col">Price</th>
-      <th scope="col">Delete</th>
+      <th scope="col">Продукт</th>
+      <th scope="col">Количестов</th>
+      <th scope="col">Стоимость</th>
+      <th scope="col">Удалить</th>
     </tr>
   </thead>
   <tbody>
@@ -20,7 +20,7 @@
           <td>
               <button class="btn btn-round">
                 <a href="{% url 'basket:remove' item.pk %}" class="">
-                delete
+                удалить
                 </a>
               </button>
           </td>
@@ -31,7 +31,7 @@
 </table>
 {% if basket %}
     <div class="basket_summary">
-      In basket {{ basket.0.total_quantity }} goods
-                {{ basket.0.total_cost }} rub
+      В корзине {{ basket.0.total_quantity }} товаров общей стоимостью
+                {{ basket.0.total_cost }} руб
     </div>
 {% endif %}

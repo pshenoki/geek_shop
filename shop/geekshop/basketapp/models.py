@@ -15,13 +15,15 @@ class Basket(models.Model):
         on_delete=models.CASCADE,
     )
     quantity = models.PositiveIntegerField(
-        verbose_name='quantity',
+        verbose_name='количество',
         default=0,
     )
     add_datetime = models.DateTimeField(
-        verbose_name='time',
+        verbose_name='время',
         auto_now_add=True,
     )
+
+    is_deleted = models.BooleanField(default=False)
 
     @property
     def product_cost(self):

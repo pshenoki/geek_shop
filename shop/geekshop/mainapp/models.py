@@ -1,39 +1,13 @@
 from django.db import models
 
 
-class MenuCategory(models.Model):
-    name = models.CharField(
-        verbose_name='имя',
-        max_length=64,
-        unique=True,
-    )
-    href = models.CharField(
-        verbose_name='ссылка',
-        max_length=100,
-    )
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return self.name or f"Category with id - {self.pk}"
-
-    class Meta:
-        verbose_name = 'категори меню'
-        verbose_name_plural = 'категории меню'
-
-
 class ProductCategory(models.Model):
-    name = models.CharField(
-        verbose_name='имя',
-        max_length=64,
-        unique=True,
-    )
-    description = models.TextField(
-        verbose_name='описание',
-        blank=True,
-    )
+    name = models.CharField(verbose_name='имя', max_length=64, unique=True)
+    description = models.TextField(verbose_name='описание', blank=True)
+
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+    is_deleted = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name or f"Category with id - {self.pk}"
@@ -47,22 +21,21 @@ class Product(models.Model):
     category = models.ForeignKey(
         ProductCategory,
         on_delete=models.CASCADE,
-        verbose_name='категория'
+        verbose_name='категория',
     )
     name = models.CharField(
-        verbose_name='имя',
-        max_length=120,
+        verbose_name='имя продукта',
+        max_length=128,
     )
     image = models.ImageField(
-        upload_to='products_images',
+        upload_to='product_images',
         blank=True,
-        verbose_name='картинка'
-
+        verbose_name='изображение',
     )
     short_desc = models.CharField(
         verbose_name='краткое описание',
         max_length=100,
-        blank=100
+        blank=True,
     )
     description = models.TextField(
         verbose_name='описание',
@@ -72,17 +45,21 @@ class Product(models.Model):
         verbose_name='цена',
         max_digits=8,
         decimal_places=2,
-        default=0
-
+        default=0,
     )
     quantity = models.PositiveIntegerField(
         verbose_name='количество товара на складе',
         default=0,
-
     )
 
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(
+        auto_now_add=True,
+    )
+    updated = models.DateTimeField(
+        auto_now=True,
+    )
+
+    is_deleted = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name or f"Product with id - {self.pk}"
